@@ -25,9 +25,9 @@ namespace Clean.Presentation
 
     class GreetingsController
     {
-        private readonly IGreetingsService greetingsService;
+        private readonly GreetingsService greetingsService;
 
-        public GreetingsController(IGreetingsService greetingsService)
+        public GreetingsController(GreetingsService greetingsService)
         {
             this.greetingsService = greetingsService;
         }
@@ -41,7 +41,7 @@ namespace Clean.Presentation
 
 namespace Clean.Domain
 {
-    class GreetingsService : IGreetingsService
+    class GreetingsService
     {
         private readonly IGreetingsRepository greetingsRepository;
 
@@ -54,11 +54,6 @@ namespace Clean.Domain
             var greeting = greetingsRepository.CreateGreeting();
             return greeting;
         }
-    }
-
-    interface IGreetingsService
-    {
-        string Execute();
     }
 
     interface IGreetingsRepository
