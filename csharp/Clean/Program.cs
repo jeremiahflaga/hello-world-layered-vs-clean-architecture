@@ -31,6 +31,7 @@ namespace Clean.Presentation
         {
             this.greetingsService = greetingsService;
         }
+
         public void Execute()
         {
             var greeting = greetingsService.Execute();

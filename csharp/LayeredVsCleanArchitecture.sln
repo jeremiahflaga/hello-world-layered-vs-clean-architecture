@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Layers", "Layers", "{00E702A9-9E25-4178-B64D-DDA838DBD585}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Layered", "1-Layered", "{00E702A9-9E25-4178-B64D-DDA838DBD585}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clean", "Clean", "{B37FBA6D-B384-4B03-A6A8-6CB7653ED8D7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Clean", "2-Clean", "{B37FBA6D-B384-4B03-A6A8-6CB7653ED8D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layers", "Layered\Layers.csproj", "{B1DC0409-72C0-4C5A-B016-58769D8C75F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layered", "Layered\Layered.csproj", "{B1DC0409-72C0-4C5A-B016-58769D8C75F6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean", "Clean\Clean.csproj", "{A871A8CA-7237-476B-82A8-02F852223263}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanAspNetWebApi", "CleanAspNetWebApi", "{B6676F9B-4CE8-46BA-8484-BF4F44FCF3B0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-CleanAspNetWebApi", "3-CleanAspNetWebApi", "{B6676F9B-4CE8-46BA-8484-BF4F44FCF3B0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanAspNet.WebApi", "CleanAspNet\CleanAspNet.WebApi\CleanAspNet.WebApi.csproj", "{07945C0E-1BC2-4D20-B871-84235074A328}"
 EndProject

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Layers.Main
+namespace Layered.Main
 {
-    using Layers.Presentation;
+    using Layered.Presentation;
 
     class Program
     {
@@ -14,9 +14,9 @@ namespace Layers.Main
     }
 }
 
-namespace Layers.Presentation
+namespace Layered.Presentation
 {
-    using Layers.Domain;
+    using Layered.Domain;
 
     class GreetingsController
     {
@@ -30,9 +30,9 @@ namespace Layers.Presentation
     }
 }
 
-namespace Layers.Domain
+namespace Layered.Domain
 {
-    using Layers.Data;
+    using Layered.Data;
 
     class GreetingsService
     {
@@ -45,7 +45,7 @@ namespace Layers.Domain
     }
 }
 
-namespace Layers.Data
+namespace Layered.Data
 {
     class GreetingsRepository
     {
