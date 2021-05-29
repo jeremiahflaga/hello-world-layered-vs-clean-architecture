@@ -1,4 +1,4 @@
-﻿using CleanAspNet.Domain.UseCaseHandlers.Greeting;
+﻿using CleanAspNet.Domain.UseCases.Greeting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,28 +12,26 @@ namespace CleanAspNetWebApi.Controllers
     [Route("api/greeting")]
     public class GetGreetingController : ControllerBase, IGetGreetingPresenter
     {
-        private readonly ILogger<WeatherForecastController> logger;
-        private readonly GetGreetingHandler getGreetingHandler;
+        private readonly UseCasesFactory useCasesFactory;
 
-        private string ViewModel;
+        private IActionResult Result;
 
-        public GetGreetingController(ILogger<WeatherForecastController> logger, GetGreetingHandler getGreetingHandler)
+        public GetGreetingController(UseCasesFactory useCasesFactory)
         {
-            this.logger = logger;
-            this.getGreetingHandler = getGreetingHandler;
+            this.useCasesFactory = useCasesFactory;
         }
 
         [HttpGet]
-        public string Get()
+        public IActionResult Get()
         {
-            getGreetingHandler.Execute();
-            return ViewModel;
+            useCasesFactory.GetGreetingHandler(this).Execute();
+            return Result;
         }
 
         [NonAction]
         public void Present(string greetingResponse)
         {
-            ViewModel = greetingResponse + "!";
+            Result = Ok(greetingResponse + "!");
         }
     }
 }

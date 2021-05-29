@@ -1,4 +1,4 @@
-using CleanAspNet.Domain.UseCaseHandlers.Greeting;
+using CleanAspNet.Domain.UseCases.Greeting;
 using CleanAspNetWebApi.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,7 +27,13 @@ namespace CleanAspNetWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<GetGreetingHandler>();
+            // Factory for UseCases is needed to solve circular dependency error:
+            // Error while validating the service descriptor 'ServiceType: CleanAspNet.Domain.UseCases.Greeting.IGetGreetingPresenter Lifetime: Scoped ImplementationType: CleanAspNetWebApi.Controllers.GetGreetingController':
+            // A circular dependency was detected for the service of type 'CleanAspNet.Domain.UseCases.Greeting.IGetGreetingPresenter'.
+            // CleanAspNet.Domain.UseCases.Greeting.IGetGreetingPresenter(CleanAspNetWebApi.Controllers.GetGreetingController)->CleanAspNet.Domain.UseCases.Greeting.GetGreetingHandler->CleanAspNet.Domain.UseCases.Greeting.IGetGreetingPresenter
+            services.AddScoped<UseCasesFactory>();
+
+            services.AddScoped<IGetGreetingHandler, GetGreetingHandler>();
             services.AddScoped<IGetGreetingPresenter, GetGreetingController>();
 
             services.AddControllers();
