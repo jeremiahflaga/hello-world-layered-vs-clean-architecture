@@ -28,13 +28,13 @@ namespace CleanAspNetWebApi.Controllers
         #region Controller
         // NOTE: To display more descriptive request body for Swagger page, properties of InputData must be public
         [HttpPost]
-        public IActionResult Execute([FromBody] SendGreetingInputData inputData)
+        public IActionResult Process([FromBody] SendGreetingInputData inputData)
         {
             var requestModel = SendGreetingRequestModelBuilder
                 .CreateFrom(inputData)
                 .WithSender(LoggedInUserId)
                 .Build();
-            useCasesFactory.GetGreetingHandler(this).Execute(requestModel);
+            useCasesFactory.CreateSendGreetingHandler(this).Process(requestModel);
             return Result;
         }
         #endregion

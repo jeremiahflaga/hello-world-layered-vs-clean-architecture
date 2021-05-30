@@ -3,7 +3,7 @@ using System;
 
 namespace CleanAspNet.Domain.UseCases.SendGreeting
 {
-    public class SendGreetingHandler
+    public class SendGreetingHandler : IUseCaseHandler<SendGreetingRequestModel>
     {
         private readonly ISendGreetingPresenter presenter;
         private readonly ISendGreetingRepository repository;
@@ -14,7 +14,7 @@ namespace CleanAspNet.Domain.UseCases.SendGreeting
             this.repository = repository;
         }
 
-        public void Execute(SendGreetingRequestModel requestModel)
+        public void Process(SendGreetingRequestModel requestModel)
         {
             try
             {

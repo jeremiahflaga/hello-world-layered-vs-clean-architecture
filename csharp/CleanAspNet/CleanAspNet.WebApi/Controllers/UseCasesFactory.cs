@@ -11,6 +11,12 @@ namespace CleanAspNetWebApi.Controllers
             this.sendGreetingRepository = sendGreetingRepository;
         }
 
-        public SendGreetingHandler GetGreetingHandler(ISendGreetingPresenter presenter) => new SendGreetingHandler(presenter, sendGreetingRepository);
+        private SendGreetingHandler sendGreetingHandler;
+        public SendGreetingHandler CreateSendGreetingHandler(ISendGreetingPresenter presenter)
+        {
+            if (sendGreetingHandler == null)
+                sendGreetingHandler = new SendGreetingHandler(presenter, sendGreetingRepository);
+            return sendGreetingHandler;
+        }
     }
 }
