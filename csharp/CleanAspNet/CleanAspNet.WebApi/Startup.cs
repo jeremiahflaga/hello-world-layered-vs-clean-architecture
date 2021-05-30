@@ -1,4 +1,5 @@
-using CleanAspNet.Domain.UseCases.Greeting;
+using CleanAspNet.Data;
+using CleanAspNet.Domain.UseCases.SendGreeting;
 using CleanAspNetWebApi.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,10 +32,13 @@ namespace CleanAspNetWebApi
             // Error while validating the service descriptor 'ServiceType: CleanAspNet.Domain.UseCases.Greeting.IGetGreetingPresenter Lifetime: Scoped ImplementationType: CleanAspNetWebApi.Controllers.GetGreetingController':
             // A circular dependency was detected for the service of type 'CleanAspNet.Domain.UseCases.Greeting.IGetGreetingPresenter'.
             // CleanAspNet.Domain.UseCases.Greeting.IGetGreetingPresenter(CleanAspNetWebApi.Controllers.GetGreetingController)->CleanAspNet.Domain.UseCases.Greeting.GetGreetingHandler->CleanAspNet.Domain.UseCases.Greeting.IGetGreetingPresenter
+            // Solution from https://stackoverflow.com/a/41072001/1451757,
+            // also https://medium.com/software-ascending/circular-dependencies-in-dependency-injection-403b790daebb
+            //      => "circular dependencies in software are solvable because the dependencies are always self-imposed by the developers"
             services.AddScoped<UseCasesFactory>();
 
-            services.AddScoped<IGetGreetingHandler, GetGreetingHandler>();
-            services.AddScoped<IGetGreetingPresenter, GetGreetingController>();
+            services.AddScoped<ISendGreetingPresenter, SendGreetingController>();
+            services.AddScoped<ISendGreetingRepository, SendGreetingReposiory>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

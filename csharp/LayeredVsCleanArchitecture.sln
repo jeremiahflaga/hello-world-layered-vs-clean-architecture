@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanAspNet.WebApi", "Clean
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanAspNet.Domain", "CleanAspNet\CleanAspNet.Domain\CleanAspNet.Domain.csproj", "{3388101A-231F-4EA5-808C-E929FDB5562B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanAspNet.Data", "CleanAspNet\CleanAspNet.Data\CleanAspNet.Data.csproj", "{B7B2D09F-CE39-4DD2-811C-8FE0D2326EF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3388101A-231F-4EA5-808C-E929FDB5562B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3388101A-231F-4EA5-808C-E929FDB5562B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3388101A-231F-4EA5-808C-E929FDB5562B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7B2D09F-CE39-4DD2-811C-8FE0D2326EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7B2D09F-CE39-4DD2-811C-8FE0D2326EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7B2D09F-CE39-4DD2-811C-8FE0D2326EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7B2D09F-CE39-4DD2-811C-8FE0D2326EF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{A871A8CA-7237-476B-82A8-02F852223263} = {B37FBA6D-B384-4B03-A6A8-6CB7653ED8D7}
 		{07945C0E-1BC2-4D20-B871-84235074A328} = {B6676F9B-4CE8-46BA-8484-BF4F44FCF3B0}
 		{3388101A-231F-4EA5-808C-E929FDB5562B} = {B6676F9B-4CE8-46BA-8484-BF4F44FCF3B0}
+		{B7B2D09F-CE39-4DD2-811C-8FE0D2326EF0} = {B6676F9B-4CE8-46BA-8484-BF4F44FCF3B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9BC59D6C-C849-4C8F-BB3C-0928ED93436A}

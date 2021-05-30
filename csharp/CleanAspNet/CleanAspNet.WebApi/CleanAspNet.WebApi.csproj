@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CleanAspNet.Data\CleanAspNet.Data.csproj" />
     <ProjectReference Include="..\CleanAspNet.Domain\CleanAspNet.Domain.csproj" />
   </ItemGroup>
 
