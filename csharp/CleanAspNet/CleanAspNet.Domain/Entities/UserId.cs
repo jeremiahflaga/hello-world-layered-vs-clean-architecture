@@ -13,6 +13,9 @@ namespace CleanAspNet.Domain.Entities
 
         private UserId(Guid value)
         {
+            if (value == Guid.Empty)
+                throw new ArgumentException($"Guid for {this.GetType().Name} cannot be empty", nameof(value));
+
             this.Value = value;
         }
 
