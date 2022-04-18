@@ -6,7 +6,7 @@ namespace Clean.Main
     using Clean.Domain;
     using Clean.Presentation;
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -23,7 +23,7 @@ namespace Clean.Presentation
 {
     using Clean.Domain;
 
-    class GreetingsController
+    public class GreetingsController
     {
         private readonly GreetingsService greetingsService;
 
@@ -42,7 +42,7 @@ namespace Clean.Presentation
 
 namespace Clean.Domain
 {
-    class GreetingsService
+    public class GreetingsService
     {
         private readonly IGreetingsRepository greetingsRepository;
 
@@ -57,7 +57,7 @@ namespace Clean.Domain
         }
     }
 
-    interface IGreetingsRepository
+    public interface IGreetingsRepository
     {
         string CreateGreeting();
     }
@@ -67,7 +67,7 @@ namespace Clean.Data
 {
     using Clean.Domain;
 
-    class GreetingsRepository : IGreetingsRepository
+    public class GreetingsRepository : IGreetingsRepository
     {
         public string CreateGreeting()
         {
